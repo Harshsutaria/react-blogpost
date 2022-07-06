@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Counter } from "./components/Counter";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+// this will be the main class where we will be passing the list of components
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>don't fear failure be terrified of regrets!!!!!!</h1>
+
+      <Router>
+        <Switch>
+          <Route path="/counter">
+            <Counter />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
