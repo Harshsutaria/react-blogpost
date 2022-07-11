@@ -4,19 +4,31 @@
       "mrp": 3448110,
       "pricePerUnit": 3448110,
       "id": "5bsu",
-      "productLevel3Title": "Teja"
+      "productLevel3Title": "mango"
     },
     {
       "mrp": 3322312,
       "pricePerUnit": 3322312,
       "id": "5bsz",
-      "productLevel3Title": "Teja"
+      "productLevel3Title": "apple"
     },
     {
       "mrp": 1825842,
       "pricePerUnit": 1825842,
-      "id": "5c50",
-      "productLevel3Title": "Teja"
+      "id": "5c56",
+      "productLevel3Title": "orange"
+    },
+    {
+      "mrp": 1825842,
+      "pricePerUnit": 1825842,
+      "id": "5c57",
+      "productLevel3Title": "strawebbery"
+    },
+    {
+      "mrp": 1825842,
+      "pricePerUnit": 1825842,
+      "id": "5c58",
+      "productLevel3Title": "custuard apple"
     }
   ]
 }
