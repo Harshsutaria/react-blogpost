@@ -1,13 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { RenderProduct } from "./RenderProduct";
 export const GetProducts = () => {
   console.log("inside GetProducts Component!!!");
 
   // declaring below variables
-  let [data, setData] = useState(null);
+  let [data, setData] = useState([
+    {
+      mrp: 1825842,
+      pricePerUnit: 1825842,
+      id: "5c58",
+      productLevel3Title: "custuard apple",
+    },
+  ]);
+
   let [error, setError] = useState(null);
-  let [pending, SetPending] = useState(true);
+  let [pending, setPending] = useState(true);
 
   // helper functions
 
@@ -18,9 +26,11 @@ export const GetProducts = () => {
     try {
       result = await axios.get(url);
       setData(result.data);
+      setPending(false);
     } catch (error) {
       console.log("ERROR AAGAYA BRUH!!!!!");
       setError(error);
+      setPending(false);
     }
 
     console.log("**********result is *********", result);
@@ -29,20 +39,15 @@ export const GetProducts = () => {
   //injecting below useEffect
   useEffect(() => {
     console.log("use effect ran!!!");
-    getData("http://localhost:8000/productss");
+    getData("http://localhost:8000/products");
   }, []);
 
   // returning below jsx
+
   return (
-    <div className="mainProductListing">
-      <h1>Hey Please check product listing!!! </h1>
-      {data.map((x) => (
-        <div>
-          <h1>{x.id}</h1>
-          <h1>{x.productLevel3Title}</h1>
-          <h1>{x.mrp}</h1>
-        </div>
-      ))}
+    <div className="productListing">
+      {/* calling the component for rendering basic information */}
+      <RenderProduct data={data} title="Hey Please check product listing!!!" />
     </div>
   );
 };
